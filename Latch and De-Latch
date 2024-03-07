@@ -1,0 +1,44 @@
+const int relayPin_1 = 8;
+const int relayPin_2 = 3;
+void setup() {
+Serial.begin(9600);
+pinMode (relayPin_1, OUTPUT);
+pinMode (relayPin_2, OUTPUT);
+digitalWrite (relayPin_1, LOW);
+digitalWrite (relayPin_2, LOW);
+for(int i=0; i<10; i++){
+
+
+  for(int j=0; j<1; j++){
+  Serial.println("Latch Started");
+ // Serial.println("Opened");
+digitalWrite (relayPin_1, LOW);
+digitalWrite (relayPin_2, LOW);
+delay(500);
+  //Serial.println("Closed");
+digitalWrite (relayPin_1, HIGH);
+digitalWrite (relayPin_2, HIGH);
+ delay(500);
+}
+
+delay(5000);
+
+for(int k=0; k<1; k++){
+   Serial.println("DELatch Started");
+digitalWrite (relayPin_1, LOW);
+digitalWrite (relayPin_2, HIGH);
+delay(500);
+digitalWrite (relayPin_1, HIGH);
+digitalWrite (relayPin_2, LOW);
+ delay(500); 
+}
+delay(5000);
+}
+
+}
+
+void loop() {
+// digitalWrite (relayPin_1, LOW);
+// digitalWrite (relayPin_2, HIGH);
+// delay(2000);
+}
